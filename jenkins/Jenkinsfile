@@ -5,11 +5,6 @@ pipeline {
         PATH = "PATH=$PATH:$MAVEN_HOME/bin"
     }
     stages {
-        stage("Clean up"){
-            steps {
-                deleteDir()
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
